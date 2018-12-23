@@ -1,17 +1,19 @@
-.contenedor-principal
-  background-color: #CCC
+@import "~src/stylus/core/variables.styl"
+
+.contenedor-main
+  background-color: $gray20
   display: table
   height: 100%
   width: 100%
 
   .contenedor-menu
-    background-color: #FFF
+    background-color: $menu-bgc
     display: table-cell
     height: 100%
     width: 68px
 
   .contenedor-display
-    background-color: red
+    background-color: $menu-bc
     display: table-cell
     height: 100%
     width: calc(100% - 68px)
