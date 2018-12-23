@@ -5,11 +5,13 @@ import { AppComponent } from './app.component';
 
 import { httpInterceptorProviders } from './service/http-interceptors/index';
 import { HshpMenuComponent } from './component/hshp-menu/hshp-menu.component';
+import { HshpDividerComponent } from './component/hshp-divider/hshp-divider.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HshpMenuComponent
+    HshpMenuComponent,
+    HshpDividerComponent
   ],
   imports: [
     BrowserModule
