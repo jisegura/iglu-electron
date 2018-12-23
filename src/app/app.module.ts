@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
-import { httpInterceptorProviders } from './Service/http-interceptors/index';
+import { httpInterceptorProviders } from './service/http-interceptors/index';
+import { HshpMenuComponent } from './component/hshp-menu/hshp-menu.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HshpMenuComponent
   ],
   imports: [
     BrowserModule
