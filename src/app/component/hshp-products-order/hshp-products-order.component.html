@@ -1,31 +1,37 @@
 <div class="contenedor">
-  <div class="cabeza">
-    <div class="numero-pedido">
-      <button mat-raised-button color="primary" class="btn-cube">
-        <mat-icon>add</mat-icon>
-      </button>
-      <button mat-stroked-button color="primary" class="btn-cube">
-        <span>1</span>
-      </button>
-      <button mat-stroked-button color="primary" class="btn-cube">
-        <span>2</span>
-      </button>
-      <button mat-stroked-button color="primary" class="btn-cube">
-        <span>3</span>
-      </button>
-    </div>
-    <div class="select-empleado">
-      <mat-form-field>
-        <mat-select placeholder="Choose one">
-          <mat-option>Clear</mat-option>
-          <mat-option value="valid">Valid option</mat-option>
-          <mat-option value="invalid">Invalid option</mat-option>
-        </mat-select>
-        <mat-hint>Errors appear instantly!</mat-hint>
-      </mat-form-field>
-    </div>
-  </div>
-  <div class="cuerpo">
-
-  </div>
+  <mat-card class="cartas">
+    <mat-card-title>Pedidos</mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div class="numero-pedido">
+        <button mat-raised-button color="primary" class="btn-cube">
+          <mat-icon>add</mat-icon>
+        </button>
+        <button mat-stroked-button color="primary" class="btn-cube">
+          <span>1</span>
+        </button>
+        <button mat-stroked-button color="primary" class="btn-cube">
+          <span>2</span>
+        </button>
+        <button mat-stroked-button color="primary" class="btn-cube">
+          <span>3</span>
+        </button>
+      </div>
+      <div class="select-empleado">
+        <mat-form-field>
+          <mat-select placeholder="Choose one">
+            <mat-option>Clear</mat-option>
+            <mat-option value="valid">Valid option</mat-option>
+            <mat-option value="invalid">Invalid option</mat-option>
+          </mat-select>
+          <mat-hint>Errors appear instantly!</mat-hint>
+        </mat-form-field>
+      </div>
+      <mat-divider></mat-divider>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-footer>
+      <span>footer</span>
+    </mat-card-footer>
+  </mat-card>
 </div>

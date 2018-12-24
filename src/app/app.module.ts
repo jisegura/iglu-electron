@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Materials Components
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
@@ -33,6 +35,8 @@ import { HshpProductsOrderComponent } from './component/hshp-products-order/hshp
     FormsModule,
     HttpClientModule,
     MatButtonModule,
+    MatCardModule,
+    MatDividerModule,
     MatFormFieldModule,
     MatIconModule,
     MatSelectModule,
