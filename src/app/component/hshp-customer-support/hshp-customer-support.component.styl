@@ -1,0 +1,42 @@
+@import "~src/stylus/core/variables.styl"
+
+.contenedor
+  display: block
+  height: 100%
+  width: 100%
+
+  .top
+    background-color: $white
+    display: table
+    height: calc(100vh - 354px)
+    width: 100%
+
+    .pedidos
+      background-color: red
+      display: table-cell
+      height: inherit
+      width: calc(100% - 420px)
+
+    .facturas-previas
+      background-color: black
+      display: table-cell
+      height: inherit
+      width: 420px
+
+  .bottom
+    background-color: green
+    height: 354px
+    width: 100%
+    display: table
+
+    .productos
+      background-color: yellow
+      height: inherit
+      display: table-cell
+      width: calc(100% - 200px)
+
+    .categorias
+      background-color: purple
+      height: inherit
+      display: table-cell
+      width: 200px
