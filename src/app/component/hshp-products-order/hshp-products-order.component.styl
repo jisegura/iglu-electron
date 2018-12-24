@@ -1,0 +1,66 @@
+@import "~src/stylus/core/variables.styl"
+
+.contenedor
+  background-color: transparent
+  display: table
+  height: calc(100vh - 354px)
+  width: calc(100% - 420px)
+
+  .cabeza
+    background-color: #10462f
+    height: 68px
+    width: 100%
+
+    .select-empleado
+      display: table-cell
+      padding: 0px 20px
+
+    .numero-pedido
+      display: table-cell
+      overflow-x: auto
+      overflow-y: hidden
+      vertical-align: bottom;
+      width: 100%
+
+      button.btn-cube
+        height: 50px
+        width: 50px
+        margin: 2px 7px
+        padding: 0px
+        min-width: auto
+
+        .mat-icon
+          height: 30px
+          width: 30px
+          font-size: 30px
+
+        span
+          font-size: 16px
+          font-weight: 600
+
+  .cuerpo
+    background-color: $menu-bgc
+    height: calc(100vh - 354px - 68px)
+
+    .numero-pedido
+      width: 68px
+      height: inherit
+      overflow-y: auto
+      overflow-x: hidden
+      text-align: center
+
+      button.btn-cube
+        height: 50px
+        width: 50px
+        margin: 2px 7px
+        padding: 0px
+        min-width: auto
+
+        .mat-icon
+          height: 30px
+          width: 30px
+          font-size: 30px
+
+        span
+          font-size: 16px
+          font-weight: 600
