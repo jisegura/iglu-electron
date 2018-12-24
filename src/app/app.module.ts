@@ -13,12 +13,14 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { httpInterceptorProviders } from './service/http-interceptors/index';
 import { HshpMenuComponent } from './component/hshp-menu/hshp-menu.component';
 import { HshpDividerComponent } from './component/hshp-divider/hshp-divider.component';
+import { HshpCustomerSupportComponent } from './component/hshp-customer-support/hshp-customer-support.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HshpMenuComponent,
-    HshpDividerComponent
+    HshpDividerComponent,
+    HshpCustomerSupportComponent
   ],
   imports: [
     BrowserModule,
