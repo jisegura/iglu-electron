@@ -1,3 +1,5 @@
+@import "~src/stylus/core/variables.styl"
+
 .contenedor
   height: 334px
   padding: 0px 10px 10px
@@ -7,8 +9,8 @@
     padding: 5px
 
     .productos-lista
-      width: 1100px
-      display: inline-block
+      display: table-cell
+      width: 1085px
 
       button.btn-img
         height: 100px
@@ -17,7 +19,7 @@
         padding: 0px 5px
         line-height: normal
         vertical-align: top
-        background-color: #eb6d07 //transparent
+        background-color: $iglu-orange //transparent
         background-repeat: no-repeat
         background-size: cover
         background-position: center center
@@ -26,3 +28,18 @@
         span
           font-weight: bold
           white-space: normal
+
+    .divider-vertical
+      display: table-cell
+
+    .categorias-lista
+      display: table-cell
+      text-align: center
+
+      button
+        margin: 4px
+        width: 120px
+
+        span
+          font-weight: bold
+          font-size: 16px
