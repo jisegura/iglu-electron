@@ -8,6 +8,9 @@ export interface ProductoElement {
 
 const ELEMENT_DATA: ProductoElement[] = [
   {nombre: "Bombom Helado", precio: 100},
+  {nombre: "1 Kilo", precio: 1100},
+  {nombre: "1/2 Kilo", precio: 500},
+  {nombre: "1/4 Kilo", precio: 220},
   {nombre: "Palito Bombom", precio: 120}
 ];
 
