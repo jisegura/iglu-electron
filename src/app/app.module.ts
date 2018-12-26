@@ -23,6 +23,7 @@ import { HshpDividerComponent } from './component/hshp-divider/hshp-divider.comp
 import { HshpCustomerSupportComponent } from './component/hshp-customer-support/hshp-customer-support.component';
 import { HshpProductsOrderComponent } from './component/hshp-products-order/hshp-products-order.component';
 import { HshpProductsCatalogueComponent } from './component/hshp-products-catalogue/hshp-products-catalogue.component';
+import { HshpSalesMadeComponent } from './component/hshp-sales-made/hshp-sales-made.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { HshpProductsCatalogueComponent } from './component/hshp-products-catalo
     HshpDividerComponent,
     HshpCustomerSupportComponent,
     HshpProductsOrderComponent,
-    HshpProductsCatalogueComponent
+    HshpProductsCatalogueComponent,
+    HshpSalesMadeComponent
   ],
   imports: [
     BrowserModule,
