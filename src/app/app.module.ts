@@ -24,6 +24,7 @@ import { HshpCustomerSupportComponent } from './component/hshp-customer-support/
 import { HshpProductsOrderComponent } from './component/hshp-products-order/hshp-products-order.component';
 import { HshpProductsCatalogueComponent } from './component/hshp-products-catalogue/hshp-products-catalogue.component';
 import { HshpSalesMadeComponent } from './component/hshp-sales-made/hshp-sales-made.component';
+import { HshpAdminMenuComponent } from './component/hshp-admin-menu/hshp-admin-menu.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { HshpSalesMadeComponent } from './component/hshp-sales-made/hshp-sales-m
     HshpCustomerSupportComponent,
     HshpProductsOrderComponent,
     HshpProductsCatalogueComponent,
-    HshpSalesMadeComponent
+    HshpSalesMadeComponent,
+    HshpAdminMenuComponent
   ],
   imports: [
     BrowserModule,
