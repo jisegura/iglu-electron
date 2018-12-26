@@ -1,9 +1,19 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class="contenedor-main">
-  <div class="contenedor-menu">
-    <app-hshp-menu></app-hshp-menu>
-  </div>
-  <div class="contenedor-display">
-    <app-hshp-customer-support></app-hshp-customer-support>
-  </div>
+  <ng-container *ngIf="true">
+    <div class="admin-menu">
+      <app-hshp-menu></app-hshp-menu>
+    </div>
+    <div class="admin-display">
+      <app-hshp-customer-support></app-hshp-customer-support>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="false">
+    <div class="public-menu">
+      <app-hshp-menu></app-hshp-menu>
+    </div>
+    <div class="public-display">
+      <app-hshp-customer-support></app-hshp-customer-support>
+    </div>
+  </ng-container>
 </div>

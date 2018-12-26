@@ -1,20 +1,33 @@
 @import "~src/stylus/core/variables.styl"
 
 .contenedor-main
-  background-color: $gray20
+  background-color: $menu-bc
   display: table
   height: 100%
   width: 100%
 
-  .contenedor-menu
+  .public-menu
     background-color: $menu-bgc
     display: table-cell
     height: 100%
     width: 68px
 
-  .contenedor-display
+  .public-display
     background-color: $menu-bc
     display: table-cell
     height: 100%
     position: relative
     width: calc(100% - 68px)
+
+  .admin-menu
+    background-color: $menu-bgc
+    display: table-cell
+    height: 100%
+    width: 240px
+
+  .admin-display
+    background-color: $menu-bc
+    display: table-cell
+    height: 100%
+    position: relative
+    width: calc(100% - 240px)
