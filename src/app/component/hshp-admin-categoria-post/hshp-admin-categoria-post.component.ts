@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-hshp-admin-categoria-post',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HshpAdminCategoriaPostComponent implements OnInit {
 
-  constructor() { }
+  categoriaForm = this.fb.group({
+    nombre: ['', Validators.required]
+  });
+
+  constructor(
+    private fb: FormBuilder
+  ) { }
 
   ngOnInit() {
   }
