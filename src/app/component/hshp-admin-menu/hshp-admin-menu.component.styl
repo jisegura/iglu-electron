@@ -1,0 +1,47 @@
+@import "~src/stylus/core/variables.styl"
+
+.contenedor
+  background-color: transparent
+  height: 100%
+  width: 100%
+
+  .contenedor-titulo
+    color: $white
+    text-align: center
+
+  .contenedor-options
+    background-color: transparent
+    height: calc(100vh - 68px * 2 - 4px * 2 - 10px)
+    padding: 5px 0px
+    margin-top: 10px
+    text-align: center
+    width: 100%
+
+    .btn-menu
+      width: 100%
+      color: white
+      font-weight: bold
+
+  .contenedor-exit-app
+    background-color: transparent
+    display: table-cell
+    padding-top: 9px
+    padding-left: 12px
+    text-align: center
+    width: 68px
+
+    .rotate-180
+      transform: rotate(180deg)
+
+  .contenedor-version
+    background-color: transparent
+    display: table-cell
+    padding-left: 40px
+    text-align: center
+    vertical-align: bottom
+
+    span
+      color: $light-focused
+      display: table-row
+      font-size: 14px
+      font-weight: bold
