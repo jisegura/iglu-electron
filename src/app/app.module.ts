@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { httpInterceptorProviders } from './service/http-interceptors/index';
@@ -26,6 +27,9 @@ import { HshpProductsCatalogueComponent } from './component/hshp-products-catalo
 import { HshpSalesMadeComponent } from './component/hshp-sales-made/hshp-sales-made.component';
 import { HshpAdminMenuComponent } from './component/hshp-admin-menu/hshp-admin-menu.component';
 import { HshpAdminCategoriaComponent } from './component/hshp-admin-categoria/hshp-admin-categoria.component';
+import { HshpAdminCategoriaPostComponent } from './component/hshp-admin-categoria-post/hshp-admin-categoria-post.component';
+import { HshpAdminCategoriaPutComponent } from './component/hshp-admin-categoria-put/hshp-admin-categoria-put.component';
+import { HshpAdminCategoriaDeleteComponent } from './component/hshp-admin-categoria-delete/hshp-admin-categoria-delete.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +41,10 @@ import { HshpAdminCategoriaComponent } from './component/hshp-admin-categoria/hs
     HshpProductsCatalogueComponent,
     HshpSalesMadeComponent,
     HshpAdminMenuComponent,
-    HshpAdminCategoriaComponent
+    HshpAdminCategoriaComponent,
+    HshpAdminCategoriaPostComponent,
+    HshpAdminCategoriaPutComponent,
+    HshpAdminCategoriaDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +59,7 @@ import { HshpAdminCategoriaComponent } from './component/hshp-admin-categoria/hs
     MatInputModule,
     MatSelectModule,
     MatTableModule,
+    MatTabsModule,
     MatTooltipModule,
     ReactiveFormsModule
   ],
