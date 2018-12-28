@@ -1,0 +1,25 @@
+<div class="contenedor">
+  <mat-card class="cartas">
+    <mat-card-title class="carta-header">Producto Menu</mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <mat-tab-group dynamicHeight>
+        <mat-tab label="Agregar">
+          <div>
+            <app-hshp-admin-producto-post></app-hshp-admin-producto-post>
+          </div>
+        </mat-tab>
+        <mat-tab label="Editar">
+          <div>
+            <app-hshp-admin-producto-put></app-hshp-admin-producto-put>
+          </div>
+        </mat-tab>
+        <mat-tab label="Eliminar">
+          <div>
+            <app-hshp-admin-producto-delete></app-hshp-admin-producto-delete>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -2,12 +2,14 @@
 
   <div class="form-wrapper">
     <div class="form-row">
-      <mat-form-field appearance="outline" hideRequiredMarker="true" hintLabel="Max 30 caracteres">
-        <mat-label>Nombre</mat-label>
-        <input matInput #input formControlName="nombre" maxlength="30" required>
-        <mat-hint align="end">{{input.value?.length || 0}}/30</mat-hint>
-        <mat-error *ngIf="!categoriaForm.get('nombre').valid">Debes introducir un valor</mat-error>
-      </mat-form-field>
+      <div class="form-col">
+        <mat-form-field appearance="outline" hideRequiredMarker="true" hintLabel="Max 30 caracteres">
+          <mat-label>Nombre</mat-label>
+          <input matInput #input formControlName="nombre" maxlength="30" required>
+          <mat-hint align="end">{{input.value?.length || 0}}/30</mat-hint>
+          <mat-error *ngIf="!categoriaForm.get('nombre').valid">Debes introducir un valor</mat-error>
+        </mat-form-field>
+      </div>
     </div>
   </div>
 

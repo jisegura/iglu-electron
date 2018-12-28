@@ -30,6 +30,10 @@ import { HshpAdminCategoriaComponent } from './component/hshp-admin-categoria/hs
 import { HshpAdminCategoriaPostComponent } from './component/hshp-admin-categoria-post/hshp-admin-categoria-post.component';
 import { HshpAdminCategoriaPutComponent } from './component/hshp-admin-categoria-put/hshp-admin-categoria-put.component';
 import { HshpAdminCategoriaDeleteComponent } from './component/hshp-admin-categoria-delete/hshp-admin-categoria-delete.component';
+import { HshpAdminProductoPostComponent } from './component/hshp-admin-producto-post/hshp-admin-producto-post.component';
+import { HshpAdminProductoPutComponent } from './component/hshp-admin-producto-put/hshp-admin-producto-put.component';
+import { HshpAdminProductoDeleteComponent } from './component/hshp-admin-producto-delete/hshp-admin-producto-delete.component';
+import { HshpAdminProductoComponent } from './component/hshp-admin-producto/hshp-admin-producto.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,11 @@ import { HshpAdminCategoriaDeleteComponent } from './component/hshp-admin-catego
     HshpAdminCategoriaComponent,
     HshpAdminCategoriaPostComponent,
     HshpAdminCategoriaPutComponent,
-    HshpAdminCategoriaDeleteComponent
+    HshpAdminCategoriaDeleteComponent,
+    HshpAdminProductoPostComponent,
+    HshpAdminProductoPutComponent,
+    HshpAdminProductoDeleteComponent,
+    HshpAdminProductoComponent
   ],
   imports: [
     BrowserModule,

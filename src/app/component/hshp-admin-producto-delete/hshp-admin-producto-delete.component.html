@@ -1,10 +1,11 @@
-<form [formGroup]="categoriaForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="productoForm" (ngSubmit)="onSubmit()">
 
   <div class="form-wrapper">
+
     <div class="form-row">
       <div class="form-col">
         <mat-form-field appearance="outline">
-          <mat-select placeholder="Seleccionar categoria">
+          <mat-select placeholder="Seleccionar producto">
             <mat-option value="1">1</mat-option>
             <mat-option value="2">2</mat-option>
             <mat-option value="3">3</mat-option>
@@ -12,10 +13,11 @@
         </mat-form-field>
       </div>
     </div>
+
   </div>
 
   <div class="form-submit">
-    <button mat-raised-button type="submit" color="accent" [disabled]="true">Eliminar</button>
+    <button mat-raised-button type="submit" color="accent" [disabled]="!productoForm.valid">Editar</button>
   </div>
 
 </form>

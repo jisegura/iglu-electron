@@ -1,0 +1,47 @@
+<form [formGroup]="productoForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-wrapper">
+    <div class="form-row">
+      <div class="form-col">
+        <mat-form-field appearance="outline" hideRequiredMarker="true" hintLabel="Max 30 caracteres">
+          <mat-label>Nombre</mat-label>
+          <input matInput #input formControlName="nombre" maxlength="30" required>
+          <mat-hint align="end">{{input.value?.length || 0}}/30</mat-hint>
+          <mat-error *ngIf="!productoForm.get('nombre').valid">Debes introducir un valor</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-col">
+        <mat-form-field appearance="outline" hideRequiredMarker="true">
+          <mat-label>Precio</mat-label>
+          <input matInput type="number" formControlName="precio" required>
+          <mat-error *ngIf="!productoForm.get('precio').valid">Debes introducir un valor</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-col">
+        <mat-form-field appearance="outline">
+          <mat-select placeholder="Seleccionar categoria">
+            <mat-option value="1">1</mat-option>
+            <mat-option value="2">2</mat-option>
+            <mat-option value="3">3</mat-option>
+            <mat-option value="4">4</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-col">
+        <button mat-raised-button color="primary" (click)="fileInput.click()">
+          <span>Subir imagen</span>
+          <input #fileInput type="file" (change)="onFileInput($event)" style="display:none;" />
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-submit">
+    <button mat-raised-button type="submit" color="accent" [disabled]="!productoForm.valid">Agregar</button>
+  </div>
+
+</form>
