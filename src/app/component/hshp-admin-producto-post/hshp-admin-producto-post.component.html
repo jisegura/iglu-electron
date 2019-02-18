@@ -14,7 +14,7 @@
       <div class="form-col">
         <mat-form-field appearance="outline" hideRequiredMarker="true">
           <mat-label>Precio</mat-label>
-          <input matInput type="number" formControlName="precio" required>
+          <input matInput formControlName="precio" required>
           <mat-error *ngIf="!productoForm.get('precio').valid">Debes introducir un valor</mat-error>
         </mat-form-field>
       </div>

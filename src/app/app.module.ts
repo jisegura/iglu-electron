@@ -34,6 +34,7 @@ import { HshpAdminProductoPostComponent } from './component/hshp-admin-producto-
 import { HshpAdminProductoPutComponent } from './component/hshp-admin-producto-put/hshp-admin-producto-put.component';
 import { HshpAdminProductoDeleteComponent } from './component/hshp-admin-producto-delete/hshp-admin-producto-delete.component';
 import { HshpAdminProductoComponent } from './component/hshp-admin-producto/hshp-admin-producto.component';
+import { CurrencyNumberMaskPipe } from './pipe/currency-number-mask.pipe';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { HshpAdminProductoComponent } from './component/hshp-admin-producto/hshp
     HshpAdminProductoPostComponent,
     HshpAdminProductoPutComponent,
     HshpAdminProductoDeleteComponent,
-    HshpAdminProductoComponent
+    HshpAdminProductoComponent,
+    CurrencyNumberMaskPipe
   ],
   imports: [
     BrowserModule,
@@ -72,7 +74,8 @@ import { HshpAdminProductoComponent } from './component/hshp-admin-producto/hshp
     ReactiveFormsModule
   ],
   providers: [
-    httpInterceptorProviders
+    httpInterceptorProviders,
+    CurrencyNumberMaskPipe
   ],
   bootstrap: [AppComponent]
 })

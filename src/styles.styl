@@ -32,3 +32,10 @@ body
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover
   background: $light-dividers
+
+// Remove Arrows in Input type number
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
