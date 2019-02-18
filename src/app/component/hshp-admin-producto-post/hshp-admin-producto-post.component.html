@@ -33,6 +33,7 @@
     <div class="form-row">
       <div class="form-col">
         <button mat-raised-button color="primary" (click)="fileInput.click()">
+          <mat-icon fontSet="far" fontIcon="fa-file-image" class="fa-lg"></mat-icon>
           <span>Subir imagen</span>
           <input #fileInput type="file" (change)="onFileInput($event)" style="display:none;" />
         </button>
