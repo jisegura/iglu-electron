@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { CropperComponent, ImageCropperResult } from 'angular-cropperjs';
 import { CurrencyNumberMaskPipe } from '@app/pipe/currency-number-mask.pipe.ts';
 
 @Component({
@@ -10,10 +12,26 @@ import { CurrencyNumberMaskPipe } from '@app/pipe/currency-number-mask.pipe.ts';
 export class HshpAdminProductoPostComponent implements OnInit {
 
   productoForm: FormGroup;
+  @ViewChild('angularCropper') public angularCropper: CropperComponent;
+  config = {
+    "viewMode": 1,
+    "dragMode": "move",
+    "aspectRatio": 1,
+    "autoCropArea": 1,
+    "movable": false,
+    "rotatable": false,
+    "scalable": false,
+    "zoomable": false
+  };
+  imageUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Bartholdi_Fountain_in_Washington%2C_D.C._2012.JPG/800px-Bartholdi_Fountain_in_Washington%2C_D.C._2012.JPG";
+
+  resultImage: any;
+  resultResult: any;
 
   constructor(
     private fb: FormBuilder,
-    private currencyNumberMask: CurrencyNumberMaskPipe
+    private currencyNumberMask: CurrencyNumberMaskPipe,
+    private sanitizer: DomSanitizer
   ) {
     this.productoForm = this.fb.group({
       nombre: ['', Validators.required],
@@ -31,6 +49,22 @@ export class HshpAdminProductoPostComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  resultImageFun(event: ImageCropperResult) {
+    let urlCreator = window.URL;
+    this.resultResult = this.angularCropper.cropper.getCroppedCanvas().toDataURL('image/jpeg');
+    }
+
+  checkstatus(event: any) {
+    console.log(event.blob);
+    if (event.blob === undefined) {
+      return;
+    }
+    // this.resultResult = event.blob;
+    let urlCreator = window.URL;
+    this.resultResult = this.sanitizer.bypassSecurityTrustUrl(
+        urlCreator.createObjectURL(new Blob(event.blob)));
   }
 
 }

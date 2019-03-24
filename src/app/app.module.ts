@@ -6,6 +6,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
+// Import angular-cropperjs
+import { AngularCropperjsModule } from 'angular-cropperjs';
+
 // Materials Components
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -59,6 +62,7 @@ import { CurrencyNumberMaskPipe } from './pipe/currency-number-mask.pipe';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AngularCropperjsModule,
     FormsModule,
     HttpClientModule,
     MatButtonModule,

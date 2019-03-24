@@ -37,6 +37,8 @@
           <span>Subir imagen</span>
           <input #fileInput type="file" (change)="onFileInput($event)" style="display:none;" />
         </button>
+
+        <angular-cropper #angularCropper [cropperOptions]="config" (export)="resultImageFun($event)" (ready)="checkstatus($event)" [imageUrl]="imageUrl"></angular-cropper>
       </div>
     </div>
   </div>
