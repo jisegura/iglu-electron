@@ -48,7 +48,7 @@ export class CategoriaDataService {
 
   private getCategoria(): Observable<Categoria[]>{
     return this.http.get<Categoria[]>(categoriaUrl).pipe(
-      catchError(this.handleError('getCategoria', []))
+      catchError(this.handleError('getCategoria()', []))
     );
   }
 

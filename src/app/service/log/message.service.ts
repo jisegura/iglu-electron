@@ -10,10 +10,12 @@ export class MessageService {
   constructor() { }
 
   public addSuccess(message: string): void{
+    console.log(message);
     this.messages.push(message);
   }
 
   public addError(message: string): void{
+    console.error(message);
     this.messages.push(message);
   }
 
