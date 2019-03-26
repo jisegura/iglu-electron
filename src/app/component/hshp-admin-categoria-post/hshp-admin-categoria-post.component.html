@@ -1,20 +1,23 @@
-<form [formGroup]="categoriaForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="categoriaForm" #formDirective="ngForm" (ngSubmit)="onSubmit(categoriaForm, formDirective)">
 
   <div class="form-wrapper">
     <div class="form-row">
       <div class="form-col">
-        <mat-form-field appearance="outline" hideRequiredMarker="true" hintLabel="Max 30 caracteres">
+        <mat-form-field appearance="outline" hideRequiredMarker="true" hintLabel="Max 30 caracteres" color="accent">
           <mat-label>Nombre</mat-label>
           <input matInput #input formControlName="nombre" maxlength="30" required>
           <mat-hint align="end">{{input.value?.length || 0}}/30</mat-hint>
-          <mat-error *ngIf="!categoriaForm.get('nombre').valid">Debes introducir un valor</mat-error>
+          <mat-error *ngIf="!categoriaForm.value.nombre?.valid">Debes introducir un valor</mat-error>
         </mat-form-field>
       </div>
     </div>
   </div>
 
   <div class="form-submit">
-    <button mat-raised-button type="submit" color="accent" [disabled]="!categoriaForm.valid">Agregar</button>
+    <button class="btn-spinner" mat-raised-button type="submit" color="primary" [disabled]="!categoriaForm.valid">
+      <span [hidden]="showSpinner">Agregar</span>
+      <mat-progress-spinner *ngIf="showSpinner" mode="indeterminate" diameter="20"></mat-progress-spinner>
+    </button>
   </div>
 
 </form>

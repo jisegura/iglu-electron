@@ -3,7 +3,7 @@
   <div class="form-wrapper">
     <div class="form-row">
       <div class="form-col">
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" color="accent">
           <mat-select placeholder="Seleccionar categoria">
             <mat-option value="1">1</mat-option>
             <mat-option value="2">2</mat-option>
@@ -15,7 +15,7 @@
 
     <div class="form-row">
       <div class="form-col">
-        <mat-form-field appearance="outline" hideRequiredMarker="true" hintLabel="Max 30 caracteres">
+        <mat-form-field appearance="outline" hideRequiredMarker="true" hintLabel="Max 30 caracteres" color="accent">
           <mat-label>Nombre</mat-label>
           <input matInput #input formControlName="nombre" maxlength="30" required>
           <mat-hint align="end">{{input.value?.length || 0}}/30</mat-hint>
@@ -26,7 +26,7 @@
   </div>
 
   <div class="form-submit">
-    <button mat-raised-button type="submit" color="accent" [disabled]="true">Editar</button>
+    <button mat-raised-button type="submit" color="primary" [disabled]="true">Editar</button>
   </div>
 
 </form>

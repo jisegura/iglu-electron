@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Categoria } from '@app/model/categoria.model';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { Observable, of, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { HttpErrorHandler, HandleError } from '@app/service/log/http-error-handler.service';
 import { MessageService } from '@app/service/log/message.service';
@@ -38,12 +38,21 @@ export class CategoriaDataService {
 
   }
 
-  public loadAll(): void{
+  public loadAll(): Observable<any>{
+    let obs = <BehaviorSubject<any>> new BehaviorSubject(null);
+
     this.getCategoria().subscribe(categorias => {
       this.dataStore.categorias = categorias;
       this._categorias.next(Object.assign({}, this.dataStore).categorias);
-      this.messageService.addSuccess("Load All " + categorias.toString());
-    }, error => this.messageService.addError(error));
+    }, error => {
+      this.messageService.addError(error);
+      obs.error(error);
+    }, () => {
+      this.messageService.addSuccess("Categorias Cargadas");
+      obs.complete();
+    });
+
+    return obs.asObservable();
   }
 
   private getCategoria(): Observable<Categoria[]>{
@@ -52,7 +61,9 @@ export class CategoriaDataService {
     );
   }
 
-  public load(id: number | string): void{
+  public load(id: number | string): Observable<any>{
+    let obs = <BehaviorSubject<any>> new BehaviorSubject(null);
+
     this.getCategoriaById(id).subscribe(categoria => {
       let notFound = true;
 
@@ -68,8 +79,15 @@ export class CategoriaDataService {
       }
 
       this._categorias.next(Object.assign({}, this.dataStore).categorias);
-      this.messageService.addSuccess("Load " + categoria);
-    }, error => this.messageService.addError(error));
+    }, error => {
+      this.messageService.addError(error);
+      obs.error(error);
+    }, () => {
+      this.messageService.addSuccess("Categoria Cargada");
+      obs.complete();
+    });
+
+    return obs.asObservable();
   }
 
   private getCategoriaById(id: number | string): Observable<Categoria>{
@@ -79,12 +97,21 @@ export class CategoriaDataService {
     );
   }
 
-  public create(categoria: Categoria): void{
+  public create(categoria: Categoria): Observable<any>{
+    let obs = <BehaviorSubject<any>> new BehaviorSubject(null);
+
     this.addCategoria(categoria).subscribe(categoria => {
       this.dataStore.categorias.push(categoria);
       this._categorias.next(Object.assign({}, this.dataStore).categorias);
-      this.messageService.addSuccess("Create " + categoria);
-    }, error => this.messageService.addError(error));
+    }, error => {
+      this.messageService.addError(error);
+      obs.error(error);
+    }, () => {
+      this.messageService.addSuccess("Categoria Nueva: " + '"'+categoria.Nombre+'"');
+      obs.complete();
+    });
+
+    return obs.asObservable();
   }
 
   private addCategoria(categoria: Categoria): Observable<Categoria>{
@@ -93,7 +120,9 @@ export class CategoriaDataService {
     );
   }
 
-  public update(categoria: Categoria): void{
+  public update(categoria: Categoria): Observable<any>{
+    let obs = <BehaviorSubject<any>> new BehaviorSubject(null);
+
     this.updateCategoria(categoria).subscribe(categoria => {
       this.dataStore.categorias.forEach((item, index) => {
         if (item.Id_categoria === categoria.Id_categoria) {
@@ -102,8 +131,15 @@ export class CategoriaDataService {
       });
 
       this._categorias.next(Object.assign({}, this.dataStore).categorias);
-      this.messageService.addSuccess("Update " + categoria);
-    }, error => this.messageService.addError(error));
+    }, error => {
+      this.messageService.addError(error);
+      obs.error(error);
+    }, () => {
+      this.messageService.addSuccess("Categoria Modificada");
+      obs.complete();
+    });
+
+    return obs.asObservable();
   }
 
   private updateCategoria(categoria: Categoria): Observable<Categoria>{
@@ -112,17 +148,26 @@ export class CategoriaDataService {
     );
   }
 
-  public remove(id: number): void{
+  public remove(id: number): Observable<any>{
+    let obs = <BehaviorSubject<any>> new BehaviorSubject(null);
+
     this.deleteCategoria(id).subscribe(response => {
       this.dataStore.categorias.forEach((item, index) => {
         if (item.Id_categoria === id) {
-          this.messageService.addSuccess("Remove " + item);
           this.dataStore.categorias.splice(index, 1);
         }
       });
 
       this._categorias.next(Object.assign({}, this.dataStore).categorias);
-    }, error => this.messageService.addError(error));
+    }, error => {
+      this.messageService.addError(error);
+      obs.error(error);
+    }, () => {
+      this.messageService.addSuccess("Categoria Removida");
+      obs.complete();
+    });
+
+    return obs.asObservable();
   }
 
   private deleteCategoria(id: number): Observable<{}>{
