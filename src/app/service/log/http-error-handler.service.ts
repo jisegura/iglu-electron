@@ -19,7 +19,7 @@ export class HttpErrorHandler {
 
       const message = (error.error instanceof ErrorEvent) ? error.error.message : `server returned code ${error.status} with body "${error.error}"`;
 
-      return throwError(new Error(`${serviceName}: ${operation} failed: ${message}`));
+      return throwError(`${serviceName}: ${operation} failed: ${message}`);
     }
   }
 }

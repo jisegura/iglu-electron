@@ -75,7 +75,7 @@ export class CategoriaDataService {
   private getCategoriaById(id: number | string): Observable<Categoria>{
     const url = `${categoriaUrl}${id}`;
     return this.http.get<Categoria>(url).pipe(
-      catchError(this.handleError<Categoria>(`getCategoriaById id=${id}`))
+      catchError(this.handleError<Categoria>(`getCategoriaById() id=${id}`))
     );
   }
 
@@ -89,7 +89,7 @@ export class CategoriaDataService {
 
   private addCategoria(categoria: Categoria): Observable<Categoria>{
     return this.http.post<Categoria>(categoriaUrl, categoria, httpOptions).pipe(
-      catchError(this.handleError('addCategoria', categoria))
+      catchError(this.handleError('addCategoria()', categoria))
     );
   }
 
@@ -108,7 +108,7 @@ export class CategoriaDataService {
 
   private updateCategoria(categoria: Categoria): Observable<Categoria>{
     return this.http.put<Categoria>(categoriaUrl, categoria, httpOptions).pipe(
-      catchError(this.handleError('updateCategoria', categoria))
+      catchError(this.handleError('updateCategoria()', categoria))
     );
   }
 
@@ -128,7 +128,7 @@ export class CategoriaDataService {
   private deleteCategoria(id: number): Observable<{}>{
     const url = `${categoriaUrl}${id}`;
     return this.http.delete(url, httpOptions).pipe(
-      catchError(this.handleError('deleteCategoria'))
+      catchError(this.handleError('deleteCategoria()'))
     );
   }
 }

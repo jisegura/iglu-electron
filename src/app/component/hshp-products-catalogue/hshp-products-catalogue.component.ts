@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { CategoriaDataService } from '@app/service/data/categoria-data.service';
+import { Categoria } from '@app/model/categoria.model';
+
 
 @Component({
   selector: 'app-hshp-products-catalogue',
@@ -7,9 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HshpProductsCatalogueComponent implements OnInit {
 
-  constructor() { }
+  public categorias: Observable<Categoria[]>;
+
+  constructor(
+    private categoriaDataService: CategoriaDataService
+  ) { }
 
   ngOnInit() {
+    this.categorias = this.categoriaDataService.categorias;
   }
 
 }
