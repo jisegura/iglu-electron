@@ -14,9 +14,9 @@
   </div>
 
   <div class="form-submit">
-    <button class="btn-spinner" mat-raised-button type="submit" color="primary" [disabled]="!categoriaForm.valid">
-      <span [hidden]="showSpinner">Agregar</span>
-      <mat-progress-spinner *ngIf="showSpinner" mode="indeterminate" diameter="20"></mat-progress-spinner>
+    <button class="btn-spinner" mat-raised-button type="submit" color="primary" [disabled]="!categoriaForm.valid" [disableRipple]="submitted" [class.submitted]="submitted">
+      <span [hidden]="submitted">Agregar</span>
+      <mat-progress-spinner *ngIf="submitted" mode="indeterminate" diameter="20"></mat-progress-spinner>
     </button>
   </div>
 

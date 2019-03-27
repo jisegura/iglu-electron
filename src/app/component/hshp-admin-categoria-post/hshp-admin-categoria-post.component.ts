@@ -14,7 +14,7 @@ export class HshpAdminCategoriaPostComponent implements OnInit {
   categoriaForm = this.fb.group({
     nombre: ['', Validators.required]
   });
-  showSpinner: boolean = false;
+  submitted: boolean = false;
 
   constructor(
     private categoriaDataService: CategoriaDataService,
@@ -25,22 +25,23 @@ export class HshpAdminCategoriaPostComponent implements OnInit {
   }
 
   onSubmit(formData: any, formDirective: FormGroupDirective) {
-    this.showSpinner = true;
-    console.log("S: " +this.showSpinner);
+    if (!this.submitted) {
+      this.submitted = true;
 
-    const newCategoria: Categoria = {
-      Nombre: formData.value.nombre
-    } as Categoria;
+      const newCategoria: Categoria = {
+        Nombre: formData.value.nombre
+      } as Categoria;
 
-    this.categoriaDataService.create(newCategoria).subscribe(next => {
+      this.categoriaDataService.create(newCategoria).subscribe(next => {
 
-    }, error => {
-      this.showSpinner = false;
-    }, () => {
-      formDirective.resetForm();
-      this.categoriaForm.reset();
-      this.showSpinner = false;
-    })
+      }, error => {
+        this.submitted = false;
+      }, () => {
+        formDirective.resetForm();
+        this.categoriaForm.reset();
+        this.submitted = false;
+      })
+    }
   }
 
 }
