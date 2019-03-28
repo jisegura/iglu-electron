@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroupDirective, Validators } from '@angular/forms';
+import { FormBuilder, FormGroupDirective, FormGroup, FormControl, Validators } from '@angular/forms';
 import { CategoriaDataService } from '@app/service/data/categoria-data.service';
 import { Categoria } from '@app/model/categoria.model';
 
@@ -11,10 +11,8 @@ import { Categoria } from '@app/model/categoria.model';
 })
 export class HshpAdminCategoriaPostComponent implements OnInit {
 
-  categoriaForm = this.fb.group({
-    nombre: ['', Validators.required]
-  });
-  submitted: boolean = false;
+  categoriaForm: FormGroup;
+  submitted: boolean;
 
   constructor(
     private categoriaDataService: CategoriaDataService,
@@ -22,17 +20,22 @@ export class HshpAdminCategoriaPostComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.categoriaForm = this.fb.group({
+      nombre: [null, Validators.required]
+    });
+
+    this.submitted = false;
   }
 
   onSubmit(formData: any, formDirective: FormGroupDirective) {
     if (!this.submitted) {
       this.submitted = true;
 
-      const newCategoria: Categoria = {
+      const categoria: Categoria = {
         Nombre: formData.value.nombre
       } as Categoria;
 
-      this.categoriaDataService.create(newCategoria).subscribe(next => {
+      this.categoriaDataService.create(categoria).subscribe(next => {
 
       }, error => {
         this.submitted = false;
