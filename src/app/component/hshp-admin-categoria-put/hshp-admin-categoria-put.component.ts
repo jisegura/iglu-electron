@@ -38,7 +38,7 @@ export class HshpAdminCategoriaPutComponent implements OnInit {
     this.categoriaForm.get("categorias").valueChanges.subscribe(value => {
       if (value !== null) {
         this.categoriaForm.get("nombre").enable();
-        this.categoriaForm.get("nombre").setValue(this.categoriaMethodsService.getNombreById(value));
+        this.categoriaForm.get("nombre").setValue("ID: " + value + ", " + this.categoriaMethodsService.getNombreById(value));
       } else {
         this.categoriaForm.get("nombre").disable();
       }
